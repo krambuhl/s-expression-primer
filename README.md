@@ -2,6 +2,22 @@
 
 A primer for Lisp-style S-expressions, for those already familiar with C-family languages.  S-expressions are at the core of all Lisp-family languages (Lisp, [Clojure](http://clojure.org), [Scheme](http://www.scheme-reports.org))
 
+They appear frequently in the functional form:
+
+```clojure
+(function ...arguments)
+(add 1 2 3)
+(toLowerCase "Buggle")
+```
+
+Or the expression form:
+
+```clojure
+(1 2 3 4)
+{:a 1, :b 2, :c 5}
+```
+
+
 ## Thinking in S-expressions
 
 In C-family languages we think of data structures (`Numbers`, `Strings`, `Arrays`, `Objects`), operators (`+`, `-`, `*`, `÷`, `++`, `==`), and control structures (`if/else`, `while`, `for`) as separate concerns.  In Lisp-family languages we think of all these things as S-expressions.
@@ -22,7 +38,7 @@ Let's first make one modification to help with a conceptual leap.  Instead of th
 
 Then we can rewrite this `object.method(...args)` format code into generic a `(function ...args)` format.
 
-```Lisp
+```clojure
 (== (substr "Hello World" 1) "ello World")
 ```
 
@@ -36,7 +52,7 @@ While writing code using S-expressions there is no need to consider Operator pre
 
 Can be rewritten without precedence using Lisp-style expressions.
 
-```lisp
+```clojure
 (+ 1 3 (% (* 5 7) 8)
 ```
 
